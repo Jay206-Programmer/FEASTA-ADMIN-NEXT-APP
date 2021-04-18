@@ -1,14 +1,21 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>FEASTA</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-    </div>
+      <div>
+        <div className='container-fluid d-flex align-items-center justify-content-center'>
+          <Link href = '/dashboard'>
+            <button className='btn-primary border-primary'>To Dashboard</button>
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
