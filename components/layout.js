@@ -215,10 +215,11 @@ export default function Layout({ children }) {
                                                     Activity Log
                                                 </a>
                                                 <div className="dropdown-divider" />
-                                                <button className="dropdown-item"  data-toggle="modal" data-target="#logoutModal" onClick={()=>{localStorage.setItem("login",JSON.stringify({login:false}));props.history.push('/login')} }>
+                                                <Link href="/login">
+                                                <button className="dropdown-item"  data-toggle="modal" data-target="#logoutModal" >
                                                     <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                                                     Logout
-                                                </button>
+                                                </button></Link>
                                             </div>
                                         </li>
                                     </ul>
@@ -228,9 +229,8 @@ export default function Layout({ children }) {
                                 {/* Begin Page Content */}
                                 <div className="container-fluid">
                                     {/* CONTENT */}
-                                    
                                     {children}
-
+                                    
                                     {/* FOOTER */}
                                     <footer className="sticky-footer bg-white">
                                         <div className="container my-auto">
@@ -240,8 +240,10 @@ export default function Layout({ children }) {
                                         </div>
                                     </footer>
                                     {/* End of Footer */}
-                                
+                        
                                 </div>
+                                {/* End Page Content */}
+                                
                             </div>
                         {/* End of Content Wrapper */}
                         </div>

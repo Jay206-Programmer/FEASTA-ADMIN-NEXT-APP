@@ -18,15 +18,16 @@ export default function Login() {
     const onPasswordChange = (e)=>{setdata({...data,password:e.target.value})}
 
     //* To Redirect the User
-    function handleLogin(){
-        console.log(data)
+    const handleLogin = (event) => {
+        event.preventDefault()
         router.push('/dashboard')
-        console.log('ABCDEFG')
     }
 
     //* Prefetching the dashboard Page 
     useEffect(() => {
         router.prefetch('/dashboard')
+
+        return {}
       }, [])
 
     return (
@@ -52,10 +53,10 @@ export default function Login() {
                             </div>
                             <form className="user" onSubmit={handleLogin}>
                                 <div className="form-group">
-                                <input type="email" className="form-control form-control-user" id="exampleInputEmail"  onChange={onEmailChange} aria-describedby="emailHelp" placeholder="Enter Email Address..." />
+                                <input type="email" className="form-control form-control-user" id="exampleInputEmail"  onChange={onEmailChange} aria-describedby="emailHelp" placeholder="Enter Email Address..." autoComplete="email_id" required/>
                                 </div>
                                 <div className="form-group">
-                                <input type="password" className="form-control form-control-user" id="exampleInputPassword"  onChange={onPasswordChange} placeholder="Password" />
+                                <input type="password" className="form-control form-control-user" id="exampleInputPassword"  onChange={onPasswordChange} placeholder="Password"  autoComplete="password" required/>
                                 </div>
                                 <div className="form-group">
                                 <div className="custom-control custom-checkbox small">
