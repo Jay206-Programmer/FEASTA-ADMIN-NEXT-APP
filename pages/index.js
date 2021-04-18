@@ -10,12 +10,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div className='container-fluid d-flex align-items-center justify-content-around'>
+        <div className='container-fluid d-flex align-items-center justify-content-around' style={{height: '100vh'}}>
           <Link href = '/dashboard'>
-            <button className='btn-primary border-primary'>To Dashboard</button>
+            <button className='btn btn-dark'>To Dashboard</button>
           </Link>
           <Link href = '/login'>
-            <button className='btn-primary border-primary'>To login</button>
+            <button className='btn btn-dark'>To login</button>
           </Link>
         </div>
       </div>
