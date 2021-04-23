@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <Head>
         <title>FEASTA</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <div className='container-fluid d-flex align-items-center justify-content-around' style={{height: '100vh'}}>
