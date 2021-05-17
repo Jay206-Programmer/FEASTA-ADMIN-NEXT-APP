@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
 export default function Layout({ children }) {
+
+    const router = useRouter()
 
     //* Rendering JQuery
     useEffect(() => {
@@ -62,6 +65,15 @@ export default function Layout({ children }) {
         });
 
     }, [])
+
+    const handleLogout = () => {
+        
+        var locallogin = JSON.stringify({login:false})
+        localStorage.setItem("login",locallogin);
+        
+        router.push('/login')
+    }
+
 
     return (
         <div>
@@ -216,7 +228,7 @@ export default function Layout({ children }) {
                                                 </a>
                                                 <div className="dropdown-divider" />
                                                 <Link href="/login">
-                                                <button className="dropdown-item"  data-toggle="modal" data-target="#logoutModal" >
+                                                <button className="dropdown-item"  data-toggle="modal" data-target="#logoutModal" onClick={handleLogout} >
                                                     <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                                                     Logout
                                                 </button></Link>

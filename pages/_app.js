@@ -1,8 +1,32 @@
 import '../styles/globals.css'
 import '../styles/all.min.css'
+
+//* Library Imports
+import { useEffect } from 'react'
+
+//* Next Imports
 import Head from 'next/head' 
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
+
+  const router = useRouter()
+
+  useEffect(() => {
+    
+    //? Getting Login Status
+    var locallog = localStorage.getItem("login")?JSON.parse(localStorage.getItem("login")):{login:false};
+    
+    if(locallog.login){
+      //? Login Done
+      router.push('/dashboard')
+    }
+    else{
+      //? Login Not Done
+      router.push('/login')
+    }
+  }, [])
+
   return (
     <>
       <Head>
