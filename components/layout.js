@@ -73,7 +73,7 @@ export default function Layout({ children }) {
     
     // ? Setting Up Variables
     useEffect(() => {
-        setadmin(JSON.parse(localStorage.getItem("user_name")).user_name)
+        setadmin(localStorage.getItem("user_name")?JSON.parse(localStorage.getItem("user_name")).user_name:"")
     }, [])
     
     // ? Defining Metods
