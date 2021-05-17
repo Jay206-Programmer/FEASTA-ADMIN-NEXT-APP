@@ -17,6 +17,9 @@ export default function Login() {
     const onEmailChange =(e)=>{setdata({...data,email_id:e.target.value})}
     const onPasswordChange = (e)=>{setdata({...data,password:e.target.value})}
 
+    const serverUrl = process.env.BACKEND_PATH?process.env.BACKEND_PATH:"localhost:8000"
+    console.log(serverUrl)
+    
     //* To Redirect the User
     const handleLogin = (event) => {
         event.preventDefault()
@@ -41,7 +44,7 @@ export default function Login() {
             </Head>
         
             <div>
-                <div className="container">
+                <div className="container h-auto">
                     {/* Outer Row */}
                     <div className="row justify-content-center">
                     <div className="col-xl-10 col-lg-12 col-md-9">
