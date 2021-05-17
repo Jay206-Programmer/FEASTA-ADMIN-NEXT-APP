@@ -8,15 +8,10 @@ export default function Home() {
       <Head>
         <title>FEASTA</title>
       </Head>
-      <div>
-        <div className='container-fluid d-flex align-items-center justify-content-around' style={{height: '100vh'}}>
-          <Link href = '/dashboard'>
-            <button className='btn btn-dark'>To Dashboard</button>
-          </Link>
-          <Link href = '/login'>
-            <button className='btn btn-dark'>To login</button>
-          </Link>
-        </div>
+      <div className="d-flex justify-content-center" style={{height:"100vh",textAlign:"center"}}>
+      <div className="spinner-grow text-light" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
       </div>
     </>
   )

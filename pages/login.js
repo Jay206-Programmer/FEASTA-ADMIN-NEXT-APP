@@ -1,33 +1,46 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 export default function Login() {
 
+    //* Object Definition
     const router = useRouter()
 
-    const [login, setlogin] = useState("");
-
+    //* Setting States
     const [data, setdata] = useState({
         email_id:'',
         password:''
     });
 
-    const onEmailChange =(e)=>{setdata({...data,email_id:e.target.value})}
+    const onEmailChange = (e)=>{setdata({...data,email_id:e.target.value})}
     const onPasswordChange = (e)=>{setdata({...data,password:e.target.value})}
 
-    const serverUrl = process.env.BACKEND_PATH?process.env.BACKEND_PATH:"localhost:8000"
-    console.log(serverUrl)
-    
-    //* To Redirect the User
-    const handleLogin = (event) => {
+    //* To Check Login
+    const handleLogin = async (event) => {
         event.preventDefault()
 
-        var locallogin = JSON.stringify({login:true})
-        localStorage.setItem("login",locallogin);
-        
-        router.push('/dashboard')
+        await axios.post("https://feasta-postgres.herokuapp.com/auth/admin_login/",data).then((result) => {
+            if(result.data.response_msg === "Login Successful"){
+                var login = JSON.stringify({login:true})
+                var admin_id = JSON.stringify({admin_id:result.data.admin_id})
+                var user_name = JSON.stringify({user_name: result.data.user_name})
+            
+                localStorage.setItem("login",login);
+                localStorage.setItem("admin_id",admin_id);
+                localStorage.setItem("user_name",user_name);
+
+                router.push('/dashboard')
+            } 
+            else{
+                alert(result.data.response_msg);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
     //* Prefetching the dashboard Page 
@@ -72,15 +85,15 @@ export default function Login() {
                                     </div>
                                     </div>
                                     <input type="submit" className="btn btn-primary btn-user btn-block" value="Login" />
-                                    <hr />
                                     
                                 </form>
                                 <hr />
                                 <div className="text-center">
                                     <a className="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
-                                <div className="text-center">
-                                <Link href="/"><a className="small">Create an Account!</a></Link>
+                                <br/>
+                                <div className="text-center">Don't have an account yet?{' '}
+                                <Link href="/register"><a>Create One</a></Link>
                                 </div>
                                 </div>
                             </div>

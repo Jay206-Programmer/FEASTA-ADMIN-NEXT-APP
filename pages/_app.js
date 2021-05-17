@@ -18,11 +18,19 @@ function MyApp({ Component, pageProps }) {
     
     if(locallog.login){
       //? Login Done
-      router.push('/dashboard')
+      var excludeRouts = ['/','/login','/register']
+      if (excludeRouts.indexOf(router.pathname) === -1){
+        router.push(router.pathname)
+      }
+      else{
+        router.push('/dashboard')
+      }
     }
     else{
       //? Login Not Done
-      router.push('/login')
+      if (router.pathname != '/register'){
+        router.push('/login')
+      }
     }
   }, [])
 
@@ -30,7 +38,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="description" content="Canteen-Management Website"/>
         <meta name="author" content="FEASTA"/>
