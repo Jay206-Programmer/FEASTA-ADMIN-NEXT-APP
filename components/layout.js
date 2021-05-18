@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { useState,useEffect } from 'react'
+
 
 export default function Layout({ children }) {
     
@@ -75,6 +74,9 @@ export default function Layout({ children }) {
     useEffect(() => {
         setadmin(localStorage.getItem("user_name")?JSON.parse(localStorage.getItem("user_name")).user_name:"")
     }, [])
+
+    //? Components
+    const Logo = () => <img src={require("../public/img/feasta.jpeg")} width={47} height={47}/>;
     
     // ? Defining Metods
     const handleLogout = () => {
@@ -99,7 +101,7 @@ export default function Layout({ children }) {
                             <Link href="/">
                                 <a className="sidebar-brand d-flex align-items-center justify-content-center">
                                 <div>
-                                <img src="img\feasta.jpeg" width={47} height={47} />
+                                <Logo/>
                                 </div>
                                 <div className="sidebar-brand-text mx-3">FEASTA</div>
                                 </a>
@@ -129,9 +131,9 @@ export default function Layout({ children }) {
                                 <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                                 <div className="bg-white py-2 collapse-inner rounded">
                                     <h6 className="collapse-header">Utilities:</h6>
-                                    <Link href="/"><a className="collapse-item" >Menu Updation</a></Link>
-                                    <Link href="/"><a className="collapse-item" >Special Offer</a></Link>
-                                    <Link href="/"><a className="collapse-item" >Special Item</a></Link>
+                                    <Link href="/dashboard/menu"><a className="collapse-item" >Menu Updation</a></Link>
+                                    <Link href="/dashboard/add/category"><a className="collapse-item" >Add Category</a></Link>
+                                    <Link href="/dashboard/add/item"><a className="collapse-item" >Add Item</a></Link>
                                 </div>
                                 </div>
                             </li>

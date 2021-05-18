@@ -25,6 +25,7 @@ export default function Login() {
 
         await axios.post("https://feasta-postgres.herokuapp.com/auth/admin_login/",data).then((result) => {
             if(result.data.response_msg === "Login Successful"){
+    
                 var login = JSON.stringify({login:true})
                 var admin_id = JSON.stringify({admin_id:result.data.admin_id})
                 var user_name = JSON.stringify({user_name: result.data.user_name})
@@ -33,6 +34,7 @@ export default function Login() {
                 localStorage.setItem("admin_id",admin_id);
                 localStorage.setItem("user_name",user_name);
 
+                console.log(localStorage.getItem("admin_id"))
                 router.push('/dashboard')
             } 
             else{
@@ -92,8 +94,8 @@ export default function Login() {
                                     <a className="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
                                 <br/>
-                                <div className="text-center">Don't have an account yet?{' '}
-                                <Link href="/register"><a>Create One</a></Link>
+                                <div className="text-center">Don't have an account yet?
+                                <Link href="/register"><a>{' '}Create One</a></Link>
                                 </div>
                                 </div>
                             </div>
@@ -107,3 +109,4 @@ export default function Login() {
     </>
     )
 }
+
