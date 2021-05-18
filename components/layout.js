@@ -98,7 +98,7 @@ export default function Layout({ children }) {
                         {/* Sidebar */}
                         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                             {/* Sidebar - Brand */}
-                            <Link href="/">
+                            <Link href="/dashboard">
                                 <a className="sidebar-brand d-flex align-items-center justify-content-center">
                                 <div>
                                 <Logo/>
@@ -110,7 +110,7 @@ export default function Layout({ children }) {
                             <hr className="sidebar-divider my-0" />
                             {/* Nav Item - Dashboard */}
                             <li className="nav-item active">
-                                <Link href='/' >
+                                <Link href='/dashboard' >
                                     <a className="nav-link" >
                                     <i className="fas fa-fw fa-tachometer-alt" />
                                     <span>Dashboard</span>
@@ -230,14 +230,6 @@ export default function Layout({ children }) {
                                                 <a className="dropdown-item" href="#">
                                                     <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400" />
                                                     Profile
-                                                </a>
-                                                <a className="dropdown-item" href="#">
-                                                    <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400" />
-                                                    Settings
-                                                </a>
-                                                <a className="dropdown-item" href="#">
-                                                    <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400" />
-                                                    Activity Log
                                                 </a>
                                                 <div className="dropdown-divider" />
                                                 <Link href="/login">
