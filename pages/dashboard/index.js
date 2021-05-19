@@ -8,7 +8,8 @@ export default function Dashboard() {
           <title>{'Dashboard'}</title>
         </Head>
         <Layout>
-          <div>
+          
+          <div className="container-fluid">
             {/* Page Heading */}
             <div className="d-sm-flex align-items-center justify-content-center m-1" style={{textAlign: 'center'}}>
             <h3 className="h3 mb-0 text-gray-800">Dashboard</h3>
