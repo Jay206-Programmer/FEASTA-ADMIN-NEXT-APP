@@ -98,16 +98,65 @@ export default function Dashboard() {
           </div>
           <hr/>
           <div className="pt-4 pb-4 mb-3 mt-3 container shadow-lg">
-          <div className="row text-center">
+          <div className="row ">
             <div className="col-sm-12 col-md-12 col-lg-12">
-              Orders will be displayed here
+              <div className="d-flex justify-content-around">
+                <div style={{width:"10%"}}>
+                  1
+                </div>
+                <div style={{width:"30%"}}>
+                  Jay Shukla
+                </div>
+                <div style={{width:"50%"}}>
+                  Paneer Sandwhich, Maxican Burger
+                </div>
+                <div style={{width:"10%"}} className="d-flex justify-content-end">
+                  <i className="fa fa-fw fa-arrow-circle-right m-2" style={{color:"green",cursor:"pointer"}} />
+                  <i className="fa fa-fw fa-trash m-2" style={{color:"red",cursor:"pointer"}} />
+                </div>
+              </div>
             </div>
             </div>
           </div>
           <div className="pt-4 pb-4 mb-3 mt-3 container shadow-lg">
-          <div className="row text-center">
+          <div className="row ">
             <div className="col-sm-12 col-md-12 col-lg-12">
-              Orders will be displayed here
+              <div className="d-flex justify-content-around">
+                <div style={{width:"10%"}}>
+                  2
+                </div>
+                <div style={{width:"30%"}}>
+                  Hetal Shukla
+                </div>
+                <div style={{width:"50%"}}>
+                  Paneer Tikka, Butter Naan
+                </div>
+                <div style={{width:"10%"}} className="d-flex justify-content-end">
+                  <i className="fa fa-fw fa-arrow-circle-right m-2" style={{color:"green",cursor:"pointer"}} />
+                  <i className="fa fa-fw fa-trash m-2" style={{color:"red",cursor:"pointer"}} />
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div className="pt-4 pb-4 mb-3 mt-3 container shadow-lg">
+          <div className="row ">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              <div className="d-flex justify-content-around">
+                <div style={{width:"10%"}}>
+                  3
+                </div>
+                <div style={{width:"30%"}}>
+                  Hilay Trivedi
+                </div>
+                <div style={{width:"50%"}}>
+                  Cheese Burger
+                </div>
+                <div style={{width:"10%"}} className="d-flex justify-content-end">
+                  <i className="fa fa-fw fa-arrow-circle-right m-2" style={{color:"green",cursor:"pointer"}} />
+                  <i className="fa fa-fw fa-trash m-2" style={{color:"red",cursor:"pointer"}} />
+                </div>
+              </div>
             </div>
             </div>
           </div>
