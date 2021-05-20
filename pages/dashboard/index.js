@@ -96,6 +96,22 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+          <hr/>
+          <div className="pt-4 pb-4 mb-3 mt-3 container shadow-lg">
+          <div className="row text-center">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              Orders will be displayed here
+            </div>
+            </div>
+          </div>
+          <div className="pt-4 pb-4 mb-3 mt-3 container shadow-lg">
+          <div className="row text-center">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              Orders will be displayed here
+            </div>
+            </div>
+          </div>
+          
         </Layout>
       </>
     )

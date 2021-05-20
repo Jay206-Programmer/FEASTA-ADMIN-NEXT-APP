@@ -141,36 +141,17 @@ export default function Layout({ children }) {
                             <hr className="sidebar-divider" />
                             {/* Heading */}
                             <div className="sidebar-heading">
-                                Addons
+                                Report
                             </div>
-                            {/* Nav Item - Pages Collapse Menu */}
-                            <li className="nav-item">
-                                <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                                <i className="fas fa-fw fa-folder" />
-                                <span>Pages</span>
-                                </a>
-                                <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                                <div className="bg-white py-2 collapse-inner rounded">
-                                    <a className="collapse-item" href="404.html">404 Page</a>
-                                    <a className="collapse-item" href="blank.html">Blank Page</a>
-                                </div>
-                                </div>
+                            {/* Nav Item - Dashboard */}
+                            <li className="nav-item active">
+                                <Link href='report/' >
+                                    <a className="nav-link" >
+                                    <span>Stats</span>
+                                    </a>
+                                </Link>
                             </li>
-                            {/* Nav Item - Charts */}
-                            <li className="nav-item">
-                                <a className="nav-link" href="charts.html">
-                                <i className="fas fa-fw fa-chart-area" />
-                                <span>Charts</span></a>
-                            </li>
-                            {/* Nav Item - Tables */}
-                            <li className="nav-item">
-                                <a className="nav-link" href="tables.html">
-                                <i className="fas fa-fw fa-table" />
-                                <span>Tables</span></a>
-                            </li>
-                            {/* Divider */}
-                            <hr className="sidebar-divider d-none d-md-block" />
-                            {/* Sidebar Toggler (Sidebar) */}
+                            
                             <div className="text-center d-none d-md-inline">
                                 <button className="rounded-circle border-0" id="sidebarToggle" />
                             </div>
